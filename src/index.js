@@ -1,19 +1,24 @@
+//index.js
+import roteadorUsuario from "./routes/usuario.js";
 import dotenv from "dotenv";
 import express from "express";
+
 dotenv.config();
 
-const app = express();
-const port = 3000;
+const app = express();              // Instancia o Express
+const port = 3000;                  // Define a porta
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => {        // Cria a rota da raiz do projeto
   res.json({
-    message: "API para CRUD usuario: link_gitgub",
+    nome: "João Marcos Martins Xavier",      // Substitua pelo seu nome
   });
+  console.log("Rota / solicitada");
 });
 
-app.listen(port, () => {
-  // Um socket para "escutar" as requisições
+app.listen(port, () => {            // Um socket para "escutar" as requisições
   console.log(`Serviço escutando na porta:  ${port}`);
 });
+
+app.use(roteadorUsuario);
