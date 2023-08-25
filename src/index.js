@@ -1,5 +1,5 @@
 //index.js
-import roteadorUsuario from "./routes/usuario.js";
+import roteadorUsuario from "./router/usuario.js";
 import dotenv from "dotenv";
 import express from "express";
 
