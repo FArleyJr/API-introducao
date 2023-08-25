@@ -1,4 +1,3 @@
-import roteadorUsuario from "./routes/usuario.js";
 import { Router } from "express";
 
 import {
@@ -67,5 +66,4 @@ router.delete("/usuario/:id", async (req, res) => {
 });
 
 
-app.use(roteadorUsuario);
 export default router;
