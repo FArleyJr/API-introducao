@@ -13,7 +13,7 @@ app.use(roteadorUsuario);
 
 app.get("/", (req, res) => {        // Cria a rota da raiz do projeto
   res.json({
-    nome: "João Marcos Martins Xavier",      // Substitua pelo seu nome
+    nome: "Farley jr",      // Substitua pelo seu nome
   });
   console.log("Rota / solicitada");
 });
