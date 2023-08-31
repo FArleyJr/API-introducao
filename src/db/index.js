@@ -1,7 +1,6 @@
 //bd.js
 import pkg from "pg";
 const { Pool } = pkg;
-import roteadorLogin from "./routes/login.js";
 
 
 async function connect() {
@@ -60,4 +59,3 @@ async function selectUsuario(id) {
 }
 
 export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario,autenticarUsuario };
-app.use(roteadorLogin);
