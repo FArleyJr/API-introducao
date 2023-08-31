@@ -1,6 +1,8 @@
 //bd.js
 import pkg from "pg";
 const { Pool } = pkg;
+import roteadorLogin from "./routes/login.js";
+
 
 async function connect() {
   const pool = new Pool({
@@ -15,6 +17,15 @@ async function insertUsuario(data) {
   const query = "INSERT INTO usuario (nome,senha,email) VALUES ($1,$2,$3) ";
   const usuario = [data.nome, data.senha, data.email];
   await client.query(query, usuario);
+}
+
+// src/db/index.js
+async function autenticarUsuario(email, senha) {
+  const client = await connect();
+  const query = "SELECT * FROM usuario WHERE email = $1 AND senha = $2";
+  const usuario = [email, senha];
+  const res = await client.query(query, usuario);
+  return res.rows[0];
 }
 
 async function selectUsuarios() {
@@ -49,3 +60,4 @@ async function selectUsuario(id) {
 }
 
 export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario };
+app.use(roteadorLogin);
