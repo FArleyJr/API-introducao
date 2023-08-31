@@ -1,7 +1,7 @@
 //bd.js
 import pkg from "pg";
 const { Pool } = pkg;
-import roteadorLogin from "./router/login.js";
+import roteadorLogin from "./routes/login.js";
 
 
 async function connect() {
