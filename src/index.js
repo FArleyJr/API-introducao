@@ -13,6 +13,8 @@ const port = 3000;                  // Define a porta
 app.use(express.json());
 app.use(roteadorUsuario);
 app.use(roteadorLogin);
+app.use(express.urlencoded({ extended: true }));
+
 
 app.get("/", (req, res) => {        // Cria a rota da raiz do projeto
   res.json({
